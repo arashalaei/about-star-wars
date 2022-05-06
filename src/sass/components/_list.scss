@@ -1,0 +1,41 @@
+/*
+    jsut force list element 
+    to be in center 
+    by flex and grid 
+*/
+
+ul{
+    list-style: none;
+    display: grid;
+    padding: 0 1rem;
+    &.center{
+        justify-content: center;
+    }
+}
+
+li{
+    &.flx-sb{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &.flx-ce{
+        display: flex;
+        justify-content: center
+    }
+    align-items: center;
+}
+
+
+.movie-list{
+    &__details{ // Block Element Method (BEM)
+        width:  clamp(350px, 40%, 500px); // new css property to set width responsively
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__details-release_data{
+        font-size: 1.3rem;
+    }
+}

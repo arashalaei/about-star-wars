@@ -1,0 +1,44 @@
+/*  
+    this is the app link button, 
+    when is hovered the button move-up 
+    and when is clicked it move down 
+*/ 
+.btn{
+    &:link,
+    &:visited{
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.2rem;
+        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+        background-size: 220%;
+        letter-spacing: .2rem;
+        padding: 1rem;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        border-radius: 3px;
+    }
+
+    &:hover{
+        background-position: 100%;
+        // color: $color-primary;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+        color: #551A8B;
+    }
+
+}
+
+// back to movie and starship button
+.back-to-movie{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #551A8B;
+    transition: all 0.2s;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+}
