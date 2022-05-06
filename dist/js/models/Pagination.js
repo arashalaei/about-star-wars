@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Pagination {
     constructor(container, data, limit) {
         this.count = 0;
@@ -27,4 +29,4 @@ class Pagination {
         this.count = Math.ceil(this.data.length / this.limit); // count of pagination buttons
     }
 }
-export default Pagination;
+exports.default = Pagination;

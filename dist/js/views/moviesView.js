@@ -1,5 +1,17 @@
-import { addHeader, addLoader, removeLoader } from './utils.js';
-import { list, listItem } from './utils.js';
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.constructMoviePage = exports.addMoviesList = void 0;
+const utils_js_1 = require("./utils.js");
+const utils_js_2 = require("./utils.js");
 // detail of the movie like: title, id, date
 const innerList = (data) => `
     <div class="movie-list__details">
@@ -11,21 +23,23 @@ const innerList = (data) => `
     </div>
 `;
 // add list of movies to the container
-export const addMoviesList = (container, data) => {
+const addMoviesList = (container, data) => {
     let lists = '';
     data.forEach((d) => {
-        lists += listItem(innerList(d), 'flx-sb movie-list');
+        lists += (0, utils_js_2.listItem)(innerList(d), 'flx-sb movie-list');
     });
-    container.insertAdjacentHTML('beforeend', list(lists));
+    container.insertAdjacentHTML('beforeend', (0, utils_js_2.list)(lists));
 };
+exports.addMoviesList = addMoviesList;
 // build-up movie page
-export const constructMoviePage = async (container, moviesModel) => {
+const constructMoviePage = (container, moviesModel) => __awaiter(void 0, void 0, void 0, function* () {
     container.innerHTML = '';
     container.classList.remove('main--starships');
-    addHeader(container, 'Movies');
-    addLoader(container);
-    const moviesData = await moviesModel.getData();
-    addMoviesList(container, moviesData);
-    removeLoader();
+    (0, utils_js_1.addHeader)(container, 'Movies');
+    (0, utils_js_1.addLoader)(container);
+    const moviesData = yield moviesModel.getData();
+    (0, exports.addMoviesList)(container, moviesData);
+    (0, utils_js_1.removeLoader)();
     return moviesData;
-};
+});
+exports.constructMoviePage = constructMoviePage;

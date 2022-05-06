@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * to access to any element of DOM we need this Class
  */
@@ -32,4 +34,4 @@ class Dom {
         return this.elementString;
     }
 }
-export default Dom;
+exports.default = Dom;

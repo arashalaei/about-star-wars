@@ -1,5 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.changeAppContainerBG = void 0;
 // change background in every 5s
-export const changeAppContainerBG = (appContainerEl, timeout) => {
+const changeAppContainerBG = (appContainerEl, timeout) => {
     appContainerEl.style.backgroundImage = `url(./dist/img/1.webp)`;
     setInterval(() => {
         // generate random imgae number            
@@ -8,3 +11,4 @@ export const changeAppContainerBG = (appContainerEl, timeout) => {
         appContainerEl.style.backgroundImage = url;
     }, timeout);
 };
+exports.changeAppContainerBG = changeAppContainerBG;
